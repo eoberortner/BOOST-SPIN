@@ -1,3 +1,3 @@
 .DS_STORE
-./local/app/war/BOOST.war
-./local/db/data
+local/app/war/BOOST.war
+local/db/data
