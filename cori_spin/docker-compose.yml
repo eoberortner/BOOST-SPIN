@@ -1,0 +1,19 @@
+version: '2'
+services:
+  app:
+    image: registry.spin.nersc.gov/eoberort/boost-app:latest
+    ports:
+    - "60050:8080"
+    cap_drop:
+    - ALL
+  web:
+    image: registry.spin.nersc.gov/eoberort/boost-web:latest
+    ports:
+    - "60000:8181"
+    volumes:
+    - /global/project/projectdirs/m342/BOOST/web/nginx-proxy.conf:/etc/nginx/conf.d/default.conf:ro
+    user: 63372:5242
+    group_add:
+    - nginx
+    cap_drop:
+    - ALL
